@@ -46,7 +46,7 @@ class WebSocketService {
     onMessage(ws, clientId, data, roomid) {
         logger.info(`Received message from client ${clientId} room id ${roomid}: ${data}`);
         // this.sendToClient(clientId, `Client ${clientId} room id ${roomid} says: ${data}`);
-        this.broadcastToRoom(roomid, ws, `Client ${clientId} room id ${roomid} says: ${data}`);
+        this.broadcastToRoom(roomid, ws, `${roomid} says: ${data}`);
     }
 
     onClose(clientId) {
